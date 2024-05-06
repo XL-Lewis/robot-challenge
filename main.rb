@@ -1,4 +1,4 @@
-require_relative "robot"
+require_relative "lib/robot"
 require "irb"
 
 IRB.start

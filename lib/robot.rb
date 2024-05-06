@@ -1,10 +1,10 @@
-
 class Robot
   @@DIRECTIONS = [:north, :east, :south, :west]
-
+  attr_reader :xCoord
+  attr_reader :yCoord
   def initialize(x, y, f)
-    if x > 4 or y > 4 or x < 0 or y < 0
-      #TODO
+    if !(x <= 4 && x >= 0 && y <= 4 && y >= 0)
+      raise "Robot initialized with invalid position"
     end
     @xCoord = x
     @yCoord = y
@@ -23,9 +23,9 @@ class Robot
         @yCoord += 1
       when :south
         @yCoord -= 1
-      when :west
-        @xCoord += 1
       when :east
+        @xCoord += 1
+      when :west
         @xCoord -= 1
     end
     @xCoord = @xCoord.clamp(0,4)
@@ -45,6 +45,6 @@ class Robot
 
   # Print out the current coords and direction of the robot
   def status
-    puts "#{@xCoord}, #{@yCoord}, #{self.direction}"
+    puts "OUTPUT: #{@xCoord},#{@yCoord},#{self.direction.upcase}"
   end
 end
