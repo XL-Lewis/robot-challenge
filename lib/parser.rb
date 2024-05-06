@@ -2,7 +2,7 @@ require_relative "robot"
 class Parser
   @robot = nil
 
-  #
+  # Handle command input and dictate moves to robot
   def parseCommand(cmd)
     args = cmd.strip.downcase.split(' ')
 

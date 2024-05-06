@@ -11,9 +11,9 @@ require 'spec_helper'
 
 RSpec.describe Parser do
   describe "Invalid commands don't crash the CLI" do
+    parser = Parser.new
     parser.parseCommand("Broke bad command")
     parser.parseCommand("PLACE 1,2,EAST")
-    parser.
   end
   describe "correctly outputs the current position with 'status' commands" do
 

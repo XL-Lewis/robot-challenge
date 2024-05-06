@@ -7,6 +7,7 @@
 require "robot"
 require "spec_helper"
 
+# Simple validation helper method
 def positionIsValid(x,y)
   return x <= 4 && x >= 0 && y <= 4  && y >= 0
 end
