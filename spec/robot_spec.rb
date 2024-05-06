@@ -1,24 +1,18 @@
-# TODO
 # Testing
 # - [x] Robot is unable to fall off table edge
-# - [x] Robot is unable to be placed 'off table'
+# - [x] Robot is unable to be placed "off table"
 # - [x] Move commands are correctly interpreted for each direction
 # - [x] Rotation commands are correctly interpreted for each direction
-# - [ ] Invalid/malformed commands are ignored or print errors
-# - [ ] Status message correctly outputs current coords and direction
-# - [ ] Commands before a robot is initialized are ignored
-
 
 require "robot"
-require 'spec_helper'
+require "spec_helper"
 
 def positionIsValid(x,y)
   return x <= 4 && x >= 0 && y <= 4  && y >= 0
 end
 
 RSpec.describe Robot do
-  describe 'cannot move off table' do
-  # -- Validate cannnot 'fall' off table
+  describe "cannot move off table" do
     it "north" do
       r = Robot.new(4,4,:north)
       r.move
