@@ -38,5 +38,14 @@ RSpec.describe Parser do
     expect(parser.robot.xCoord).to eq(3)
     expect(parser.robot.yCoord).to eq(3)
   end
-
+  it "returns an error when placing a robot off the table" do
+    parser = Parser.new
+    result = parser.parseCommand("PLACE 3,5,SOUTH")
+    expect(result).to eq("Error: Robot initialized with invalid position")
+  end
+  it "returns an error when placing a robot with an invalid direction" do
+    parser = Parser.new
+    result = parser.parseCommand("PLACE 3,3,AAA")
+    expect(result).to eq("Error: Tried to initialize robot with bogus direction")
+  end
 end

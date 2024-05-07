@@ -39,14 +39,15 @@ class Robot
     @yCoord = @yCoord.clamp(0,4)
   end
 
-  # Reorient robot according to command
-  def turn(val)
-    case val
-      when :left
-        @directionIndex -= 1
-      when :right
-        @directionIndex += 1
-    end
+  # Spin robot 90 degrees left
+  def turnLeft
+    @directionIndex -= 1
+    @directionIndex %= 4
+  end
+
+  # Spin robot 90 degrees right
+  def turnRight
+    @directionIndex += 1
     @directionIndex %= 4
   end
 

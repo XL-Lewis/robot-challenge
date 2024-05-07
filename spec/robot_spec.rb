@@ -65,24 +65,24 @@ RSpec.describe Robot do
   describe "turn command correctly changes direction" do
     it "left" do
       r = Robot.new(2,2,:north)
-      r.turn(:left)
+      r.turnLeft
       expect(r.direction).to eq(:west)
-      r.turn(:left)
+      r.turnLeft
       expect(r.direction).to eq(:south)
-      r.turn(:left)
+      r.turnLeft
       expect(r.direction).to eq(:east)
-      r.turn(:left)
+      r.turnLeft
       expect(r.direction).to eq(:north)
     end
     it "right" do
       r = Robot.new(2,2,:north)
-      r.turn(:right)
+      r.turnRight
       expect(r.direction).to eq(:east)
-      r.turn(:right)
+      r.turnRight
       expect(r.direction).to eq(:south)
-      r.turn(:right)
+      r.turnRight
       expect(r.direction).to eq(:west)
-      r.turn(:right)
+      r.turnRight
       expect(r.direction).to eq(:north)
     end
   end

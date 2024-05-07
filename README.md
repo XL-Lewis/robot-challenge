@@ -10,6 +10,10 @@
   - Invalid commands will be discarded
   - Move commands leading to a position off the table will be discarded
 
+### Deviations
+
+The robot will return error messages in cases where an invalid or malformed commands is sent to the robot
+
 ### Commands
 - `PLACE x,y,f` will place a robot on the table. 
 - `MOVE` will move the robot one step forward 

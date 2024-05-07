@@ -19,9 +19,9 @@ class Parser
           when "move"
             @robot.move
           when "left"
-            @robot.turn(:left)
+            @robot.turnLeft
           when "right"
-            @robot.turn(:right)
+            @robot.turnRight
           when "report"
             return @robot.report
           else
