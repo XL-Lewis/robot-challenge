@@ -12,14 +12,16 @@
 
 ### Deviations
 
-The robot will return error messages in cases where an invalid or malformed commands is sent to the robot
+- The robot will return error messages in cases where an invalid or malformed commands is sent to the robot
+- `HELP` has been added 
 
 ### Commands
-- `PLACE x,y,f` will place a robot on the table. 
+- `PLACE x,y,f` will place a robot on the table. (x,y are integers and f is one of 'north', 'south', 'east', 'west')
 - `MOVE` will move the robot one step forward 
 - `LEFT` will turn the robot 90 degrees to it's left
 - `RIGHT` will turn the robot 90 degrees to it's right
 - `REPORT` will print out the current coordinates and face of the robot in the form `OUTPUT: x,y,f`
+- `HELP` will print a help message
 
 ### Testing
 Run `rspec` from the base directory to run all the tests. 
