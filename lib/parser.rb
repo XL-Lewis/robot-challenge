@@ -1,14 +1,13 @@
 require_relative "robot"
 class Parser
+  attr_reader :robot
   @robot = nil
 
   # Handle command input and dictate moves to robot
   def parseCommand(cmd)
     args = cmd.strip.downcase.split(' ')
+    return invalidCommand(cmd) if args.length > 2
 
-    if args.length > 2
-      invalidCommand(cmd)
-    end
     begin
       if args[0] == "place"
         placeData = args[1].split(',')
@@ -24,20 +23,31 @@ class Parser
           when "right"
             @robot.turn(:right)
           when "report"
-            @robot.report
+            return @robot.report
+          else
+            return invalidCommand(cmd)
         end
+      elsif args[0] == "help"
+        return help
+      else
+        return invalidCommand(cmd.strip)
       end
     rescue Exception => e
-      puts "Err: #{e}"
+      return "Error: #{e}"
     end
+    return
   end
 
   def invalidCommand(cmd)
-    puts "'#{cmd}' is an invalid command! Options are:\n"
-    puts "PLACE x,y,f  - Create a new robot with coordinates x,y (int) and direction f (north/east/south/west)"
-    puts "MOVE - Move forward 1 square"
-    puts "LEFT - Turn left"
-    puts "RIGHT - Turn right"
-    puts "REPORT - Print current coords and direction"
+    return "'#{cmd}' is an invalid command! Options are PLACE, MOVE, LEFT, RIGHT, REPORT, HELP"
+  end
+
+  def help
+    result = "PLACE x,y,f  - Create a new robot with coordinates x,y (int) and direction f (north/east/south/west)\n"
+    result += "MOVE - Move forward 1 square\n"
+    result += "LEFT - Turn left\n"
+    result += "RIGHT - Turn right\n"
+    result += "REPORT - Print current coords and direction"
+    return result
   end
 end

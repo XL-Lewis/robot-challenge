@@ -43,22 +43,22 @@ RSpec.describe Robot do
     it "north" do
       r = Robot.new(2,2,:north)
       r.move
-      expect(r.yCoord == 3).to be_truthy
+      expect(r.yCoord).to eq(3)
     end
     it "east" do
       r = Robot.new(2,2,:east)
       r.move
-      expect(r.xCoord == 3).to be_truthy
+      expect(r.xCoord).to eq(3)
     end
     it "south" do
       r = Robot.new(2,2,:south)
       r.move
-      expect(r.yCoord == 1).to be_truthy
+      expect(r.yCoord).to eq(1)
     end
     it "west" do
       r = Robot.new(2,2,:west)
       r.move
-      expect(r.xCoord == 1).to be_truthy
+      expect(r.xCoord).to eq(1)
     end
   end
 
@@ -66,24 +66,24 @@ RSpec.describe Robot do
     it "left" do
       r = Robot.new(2,2,:north)
       r.turn(:left)
-      expect(r.direction == :west).to be_truthy
+      expect(r.direction).to eq(:west)
       r.turn(:left)
-      expect(r.direction == :south).to be_truthy
+      expect(r.direction).to eq(:south)
       r.turn(:left)
-      expect(r.direction == :east).to be_truthy
+      expect(r.direction).to eq(:east)
       r.turn(:left)
-      expect(r.direction == :north).to be_truthy
+      expect(r.direction).to eq(:north)
     end
     it "right" do
       r = Robot.new(2,2,:north)
       r.turn(:right)
-      expect(r.direction == :east).to be_truthy
+      expect(r.direction).to eq(:east)
       r.turn(:right)
-      expect(r.direction == :south).to be_truthy
+      expect(r.direction).to eq(:south)
       r.turn(:right)
-      expect(r.direction == :west).to be_truthy
+      expect(r.direction).to eq(:west)
       r.turn(:right)
-      expect(r.direction == :north).to be_truthy
+      expect(r.direction).to eq(:north)
     end
   end
 

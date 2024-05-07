@@ -4,5 +4,6 @@ require "irb"
 
 parser = Parser.new
 loop do
-  parser.parseCommand(gets)
+  res = parser.parseCommand(gets)
+  puts res if !res.nil?
 end

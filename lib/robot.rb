@@ -52,6 +52,6 @@ class Robot
 
   # Print out the current coords and direction of the robot
   def report
-    puts "OUTPUT: #{@xCoord},#{@yCoord},#{self.direction.upcase}"
+    return "OUTPUT: #{@xCoord},#{@yCoord},#{self.direction.upcase}"
   end
 end

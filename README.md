@@ -1,23 +1,29 @@
-# Running
+# Robot
+###  Running
+  Run via main.rb
+  
+  i.e. `ruby main.rb`
 
-# Testing
+  Controls can be entered via CLI, and are not case sensitive. The table is 5x5.
+  
+  - All commands entered before a robot is placed will be discarded. 
+  - Invalid commands will be discarded
+  - Move commands leading to a position off the table will be discarded
+
+### Commands
+- `PLACE x,y,f` will place a robot on the table. 
+- `MOVE` will move the robot one step forward 
+- `LEFT` will turn the robot 90 degrees to it's left
+- `RIGHT` will turn the robot 90 degrees to it's right
+- `REPORT` will print out the current coordinates and face of the robot in the form `OUTPUT: x,y,f`
+
+### Testing
+Run `rspec` from the base directory to run all the tests. 
+
+Individual tests can be run in the form `rspec path/to/file`, i.e. `rspec spec/robot_spec.rb`
 
 
-
-# robot-challenge
-Dash Robot Technical Challenge
-
-Note:
-- Production level quality
-- unit tests
-- clean logic
-- clear structure
-- clear logic
-	
-# Toy Robot
-
-### Description
-
+# Brief
 - The application is a simulation of a toy robot moving on a square tabletop,
   of dimensions 5 units x 5 units.
 - There are no other obstructions on the table surface.
